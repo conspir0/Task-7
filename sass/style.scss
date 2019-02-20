@@ -1,5 +1,50 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+// Variables
+//-----------------------------------------------------
+$primary-color: #fff;
+$secondary-color: rgba(45, 50, 54, 1);
+
+$font: 'Rubik';
+
+// Media Query Mixins
+//-----------------------------------------------------
+@mixin mediaX {
+    @media screen and (max-width: 324px) {
+        @content;
+    }
 }
+
+@mixin mediaXx {
+    @media screen and (max-width: 574px) {
+        @content;
+    }
+}
+
+@mixin mediaXs {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin mediaSm {
+    @media screen and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin mediaMd {
+    @media screen and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin mediaLg {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+// CSS Files
+//-----------------------------------------------------
+
+@import 'default-style';
+@import 'nav';
