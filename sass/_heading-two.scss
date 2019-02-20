@@ -1,0 +1,72 @@
+// Section ---
+.heading-two {
+    position: relative;
+    background-color: rgb(245, 245, 245);
+    
+    .lg-title {
+        padding: 45px 0;
+    }
+    
+    .description {
+        color: rgba(128, 128, 128, 1);
+    }
+}
+
+// Boxes ---
+.heading-two-boxes {
+    display: grid;
+    grid-template-areas: 'heading-one heading-two heading-three';
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    margin: 0 70px;
+}
+
+.box-1 {
+    grid-area: heading-one;
+}
+
+.box-2 {
+    grid-area: heading-two;
+}
+
+.box-3 {
+    grid-area: heading-three;
+}
+
+// Dot ---
+.dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    background-color: #ff3859;
+    border-radius: 50%;
+}
+
+// RWD
+//-----------------------------------------------------
+@include mediaXs {
+    .heading-two-boxes {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "heading-one heading-two"
+    "heading-three heading-three";
+        grid-row-gap: 20px;
+    }
+}
+
+@include mediaXx {
+    .heading-two-boxes {
+        margin: 0 10px;
+        grid-template-areas:
+            'heading-one'
+            'heading-two'
+            'heading-three';
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-row-gap: 20px;
+    }
+}
