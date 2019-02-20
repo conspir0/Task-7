@@ -2,8 +2,10 @@
 //-----------------------------------------------------
 $primary-color: #fff;
 $secondary-color: rgba(45, 50, 54, 1);
-
-$font: 'Rubik';
+$third-color: rgba(33, 83, 152, 1);
+$fourth-color: rgba(166, 186, 214, 1);
+$fifth-color: rgba(128, 128, 128, 1);
+$primary-font: 'Rubik';
 
 // Media Query Mixins
 //-----------------------------------------------------
@@ -48,3 +50,6 @@ $font: 'Rubik';
 
 @import 'default-style';
 @import 'nav';
+@import 'box';
+@import 'heading-one';
+@import 'carousel';
