@@ -1,35 +1,43 @@
 // Section ---
 .heading-two {
     position: relative;
-    background-color: rgb(245, 245, 245);
+    background-color: $sixth-color;
     
     .lg-title {
         padding: 45px 0;
     }
     
     .description {
-        color: rgba(128, 128, 128, 1);
+        color: $fifth-color;
     }
 }
 
 // Boxes ---
 .heading-two-boxes {
+    display: -ms-grid;
     display: grid;
     grid-template-areas: 'heading-one heading-two heading-three';
+    -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 20px;
     margin: 0 70px;
 }
 
 .box-1 {
+    -ms-grid-row: 1; 
+    -ms-grid-column: 1; 
     grid-area: heading-one;
 }
 
 .box-2 {
+    -ms-grid-row: 1; 
+    -ms-grid-column: 2; 
     grid-area: heading-two;
 }
 
 .box-3 {
+    -ms-grid-row: 1; 
+    -ms-grid-column: 3; 
     grid-area: heading-three;
 }
 
@@ -49,12 +57,32 @@
 //-----------------------------------------------------
 @include mediaXs {
     .heading-two-boxes {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "heading-one heading-two"
-    "heading-three heading-three";
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "heading-one heading-two"
+            "heading-three heading-three";
         grid-row-gap: 20px;
+    }
+    .box-1 {
+        -ms-grid-row: 1; 
+        -ms-grid-column: 1; 
+        grid-area: heading-one;
+    }
+
+    .box-2 {
+        -ms-grid-row: 1; 
+        -ms-grid-column: 2; 
+        grid-area: heading-two;
+    }
+
+    .box-3 {
+        -ms-grid-row: 2; 
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        grid-area: heading-three;
     }
 }
 
@@ -65,8 +93,33 @@
             'heading-one'
             'heading-two'
             'heading-three';
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr;
         grid-template-rows: repeat(3, 1fr);
         grid-row-gap: 20px;
     }
+    .box-1 {
+        -ms-grid-row: 1; 
+        -ms-grid-column: 1; 
+        grid-area: heading-one;
+    }
+
+    .box-2 {
+        -ms-grid-row: 2; 
+        -ms-grid-column: 1; 
+        grid-area: heading-two;
+    }
+
+    .box-3 {
+        -ms-grid-row: 3; 
+        -ms-grid-column: 1;
+        grid-area: heading-three;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    [class*="box-"] {
+        margin: 10px;
+    }    
 }
